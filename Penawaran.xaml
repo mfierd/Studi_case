@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Promos"
         mc:Ignorable="d"
-        Title="Penawaran" Height="450" Width="377">
-    <Grid Background="White">
-        <ListBox x:Name="listPenawaran" Margin="0,51,0,45" HorizontalAlignment="Center" Width="312" SelectionChanged="listPenawaran_SelectionChanged">
+        Title="Penawaran" Height="450" Width="550" ResizeMode="NoResize">
+    <Grid>
+        <ListBox x:Name="listPenawaran" Margin="38,51,0,45" HorizontalAlignment="Left" Width="482" SelectionChanged="listPenawaran_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">

@@ -21,14 +21,14 @@ namespace Promos
 
     public partial class Penawaran : Window
     {
-        Promos.Controller.PenawaranController controller;
+        PenawaranController Penawarancontroller;
         OnPenawaranChangedListener listener;
         public Penawaran()
         {
             InitializeComponent();
 
-            controller = new Promos.Controller.PenawaranController();
-            listPenawaran.ItemsSource = controller.getItems();
+            Penawarancontroller = new PenawaranController();
+            listPenawaran.ItemsSource = Penawarancontroller.getItems();
 
             generateContentPenawaran();
 
@@ -41,19 +41,22 @@ namespace Promos
 
         private void generateContentPenawaran()
         {
-            Item drink1 = new Item("Ice tea", 8000);
-            Item drink2 = new Item("Ice lemon tea", 5000);
-            Item drink3 = new Item("Ice lemon", 7000);
-            Item food4 = new Item("Mie Ayam", 10000);
-            Item food5 = new Item("Gado-gado", 14000);
-            Item food6 = new Item("Sate", 15000);
+            Item coffeLate = new Item("Coffe Late", 30000);
+            Item blackTea = new Item("BlackTea", 20000);
+            Item pizza = new Item("Pizza", 75000);
+            Item milkShake = new Item("Milk Shake", 15000);
+            Item friedFrice = new Item("Fried Frice Special", 45000);
+            Item watermelonJuice = new Item("Watermelon Juice", 25000);
+            Item lemonSquash = new Item("Lemon Squash", 30000);
 
-            controller.addItem(drink1);
-            controller.addItem(drink2);
-            controller.addItem(drink3);
-            controller.addItem(food4);
-            controller.addItem(food5);
-            controller.addItem(food6);
+
+            Penawarancontroller.addItem(coffeLate);
+            Penawarancontroller.addItem(blackTea);
+            Penawarancontroller.addItem(pizza);
+            Penawarancontroller.addItem(milkShake);
+            Penawarancontroller.addItem(friedFrice);
+            Penawarancontroller.addItem(watermelonJuice);
+            Penawarancontroller.addItem(lemonSquash);            
 
             listPenawaran.Items.Refresh();
         }
@@ -62,7 +65,6 @@ namespace Promos
         {
             ListBox listbox = sender as ListBox;
             Item item = listbox.SelectedItem as Item;
-            Debug.WriteLine(item.title);
 
             this.listener.onPenawaranSelected(item);
         }

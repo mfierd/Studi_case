@@ -5,39 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Promos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Rectangle HorizontalAlignment="Left" Margin="222,59,0,41" Stroke="Black" Width="292" Grid.RowSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="154" Margin="38,59,0,0" Stroke="Black" VerticalAlignment="Top" Width="178" Grid.RowSpan="2"/>
-        <Label Content="Rumah No.20 - Firdaus" HorizontalAlignment="Left" Margin="47,104,0,0" VerticalAlignment="Top" Grid.RowSpan="2" FontWeight="Bold" Width="146"/>
-        <Label Content="Jl. Kartini no.20" HorizontalAlignment="Left" Margin="47,130,0,0" VerticalAlignment="Top" FontSize="9" Grid.RowSpan="2" Background="White" Foreground="Black" FontWeight="Bold"/>
-        <Button Content="Ganti Alamat" HorizontalAlignment="Left" Margin="47,181,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Foreground="White" Background="Black" BorderBrush="Black"/>
-        <Label Content="Diantar ke" HorizontalAlignment="Left" Margin="47,69,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.RowSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="154" Margin="519,59,0,0" Stroke="Black" VerticalAlignment="Top" Width="178" Grid.RowSpan="2"/>
-        <Label Content="Ringkasan Pesanan" HorizontalAlignment="Left" Margin="38,20,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Content="Metode Pembayaran" HorizontalAlignment="Left" Margin="519,61,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.RowSpan="2"/>
-        <Label Content="Subtotal" HorizontalAlignment="Left" Margin="229,291,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Content="Delivery Fee" HorizontalAlignment="Left" Margin="229,317,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Margin="519,220,0,41" Stroke="Black" Width="178" Grid.RowSpan="2"/>
-        <Label Content="Promo" HorizontalAlignment="Left" Margin="229,343,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.393,0.541" Grid.RowSpan="2"/>
-        <Rectangle VerticalAlignment="Top" Fill="LightGray" Height="0" Margin="236,286,301.6,0" Grid.RowSpan="2"/>
-        <Label Content="0" Name="labelSubtotal" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="436,292,0,0" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
-        <Label x:Name="labelDeliveryFee" Content="0" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="436,317,0,0" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
-        <Label x:Name="labelPromoFee" Content="0" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="436,343,0,0" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
-        <Label Content="Total" HorizontalAlignment="Left" Margin="519,220,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Button Content="Ganti" HorizontalAlignment="Left" Margin="650,102,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Content="Ono" HorizontalAlignment="Left" Margin="521,94,0,0" VerticalAlignment="Top" FontSize="9" Grid.RowSpan="2"/>
-        <Label x:Name="labelBalance" Content="Rp 300000" HorizontalAlignment="Left" Margin="521,107,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label Content="Promo" HorizontalAlignment="Left" Margin="524,141,0,0" VerticalAlignment="Top" FontSize="9" Grid.RowSpan="2"/>
-        <Label Content="Garbwaee" HorizontalAlignment="Left" Margin="524,154,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Button Content="Ganti" HorizontalAlignment="Left" Margin="650,152,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
-        <Label x:Name="labelGrantTotal" Content="Rp 0" HorizontalAlignment="Left" Margin="551,265,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" Grid.RowSpan="2"/>
-        <Label Content="Item Pesanan" HorizontalAlignment="Left" Margin="231,64,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.RowSpan="2"/>
-        <ListBox x:Name="listBoxPesanan" Margin="231,95,301.6,149" MouseLeftButtonUp="listBoxPesanan_ItemClicked" Grid.RowSpan="2" Background="White" BorderBrush="Black" OpacityMask="White">
+        Title="MainWindow" Height="488" Width="798">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Margin="47,59,0,18" Stroke="Black" Width="498"/>
+        <Rectangle HorizontalAlignment="Left" Height="154" Margin="572,59,0,0" Stroke="Black" VerticalAlignment="Top" Width="178"/>
+        <Label Content="Cafekita&#xD;&#xA;" HorizontalAlignment="Left" Margin="47,10,0,0" VerticalAlignment="Top" FontSize="22" Height="44" Background="#FFA1B7F3" FontFamily="Segoe UI Black"/>
+        <Label Content="Voucher Belanja" HorizontalAlignment="Left" Margin="582,64,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Subtotal" HorizontalAlignment="Left" Margin="377,367,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Margin="572,220,0,18" Stroke="Black" Width="178"/>
+        <Label Content="Promo" HorizontalAlignment="Left" Margin="382,391,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.393,0.541"/>
+        <Rectangle VerticalAlignment="Top" Fill="LightGray" Height="0" Margin="61,286,477,0"/>
+        <Label Content="Rp 0" Name="labelSubtotal" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="436,368,0,0" VerticalAlignment="Top" Width="97"/>
+        <Label x:Name="labelPromoFee" Content="Rp 0" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="436,391,0,0" VerticalAlignment="Top" Width="97"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="572,220,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelGrantTotal" Content="Rp 0" HorizontalAlignment="Left" Margin="587,265,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <Label Content="Item Pesanan" HorizontalAlignment="Left" Margin="56,64,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ListBox x:Name="listBoxPesanan" Margin="56,95,267,217" MouseLeftButtonUp="listBoxPesanan_ItemClicked">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -51,6 +34,18 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="buttonAddItem" Content=" + " HorizontalAlignment="Left" Width="45" Height="20" VerticalAlignment="Top" Margin="453,64,0,0" Click="onButtonAddItemClicked" Grid.RowSpan="2"/>
+        <Button x:Name="buttonAddItem" Content="Tambah Pesanan" HorizontalAlignment="Left" Width="126" Height="46" VerticalAlignment="Top" Margin="56,371,0,0" Click="onButtonAddItemClicked" BorderBrush="{x:Null}" Background="#FFA1B7F3"/>
+        <Label Content="Voucher yang digunakan&#xD;&#xA;" HorizontalAlignment="Left" Margin="56,239,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ListBox x:Name="listBoxPakaiVoucher" Margin="56,265,267,120" MouseLeftButtonUp="listBoxPakaiVoucher_ItemClicked">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <TextBlock Grid.Row="0" Text="{Binding title}" TextAlignment="Left" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Gunakan voucher dan dapatkan &#xA;potongan harga&#xA;" HorizontalAlignment="Left" Margin="572,98,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="178" Height="61"/>
+        <Button x:Name="PilihVoucher" Content="Pilih Voucher" HorizontalAlignment="Left" Margin="587,164,0,0" VerticalAlignment="Top" Width="150" Height="35" Click="OnPilihVoucherClicked" Background="#FFA1B7F3" BorderBrush="{x:Null}"/>
     </Grid>
 </Window>

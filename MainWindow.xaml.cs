@@ -15,15 +15,17 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Promos.Controller;
 using Promos.Model;
+using static Promos.PilihVoucher;
 
 namespace Promos
 {
     public partial class MainWindow : Window,
         OnPenawaranChangedListener,
+        OnPilihVoucherChangedListener,
         OnPaymentChangedListener,
         OnKeranjangBelanjaChangedListener
     {
-        Promos.Controller.MainWindowController controller;
+        MainWindowController controller;
         Payment payment;
 
         public MainWindow()
@@ -31,15 +33,13 @@ namespace Promos
             InitializeComponent();
 
             payment = new Payment(this);
-            payment.setBalance(500000);
-            payment.setDeliveryFee(15000);
-            payment.setPromo(5000);
 
             KeranjangBelanja keranjangBelanja = new KeranjangBelanja(payment, this);
 
-            controller = new Promos.Controller.MainWindowController(keranjangBelanja);
+            controller = new MainWindowController(keranjangBelanja);
 
             listBoxPesanan.ItemsSource = controller.getSelectedItems();
+            listBoxPakaiVoucher.ItemsSource = controller.getSelectedVouchers();
 
             initializeView();
 
@@ -47,11 +47,9 @@ namespace Promos
 
         private void initializeView()
         {
-            labelSubtotal.Content = 0;
-            labelGrantTotal.Content = 0;
-            labelBalance.Content = payment.getBalance();
-            labelPromoFee.Content = -payment.getPromo();
-            labelDeliveryFee.Content = payment.getDeliveryFee();
+            labelSubtotal.Content = "Rp 0";
+            labelGrantTotal.Content = "Rp 0";
+            labelPromoFee.Content = "Rp 0";
         }
 
         public void onPenawaranSelected(Item item)
@@ -77,22 +75,22 @@ namespace Promos
             }
         }
 
-
-        public void onSelectedPenawaranDeleted()
+        private void listBoxPakaiVoucher_ItemClicked(object sender, MouseButtonEventArgs e)
         {
-            listBoxPesanan.Items.Refresh();
+            if (MessageBox.Show("Kamu ingin membatalkan voucher ini?",
+                   "Konfirmasi", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                ListBox listBox = sender as ListBox;
+                Voucher item = listBox.SelectedItem as Voucher;
+                controller.deleteSelectedVoucher(item);
+            }
         }
 
-        public void onSelectedPenawaranAdded()
+        public void onPriceUpdated(double subtotal, double grantTotal, double potongan)
         {
-            listBoxPesanan.Items.Refresh();
-        }
-
-        public void onPriceUpdated(double subtotal, double grantTotal, double balance)
-        {
-            labelSubtotal.Content = subtotal;
-            labelBalance.Content = balance;
-            labelGrantTotal.Content = grantTotal;
+            labelSubtotal.Content = "Rp " + subtotal;
+            labelGrantTotal.Content = "Rp " + grantTotal;
+            labelPromoFee.Content = "Rp " + potongan;
         }
 
         public void removeItemSucceed()
@@ -104,5 +102,29 @@ namespace Promos
         {
             listBoxPesanan.Items.Refresh();
         }
+
+        public void removeVoucherSucceed()
+        {
+            listBoxPakaiVoucher.Items.Refresh();
+        }
+
+        public void addVoucherSucceed()
+        {
+            listBoxPakaiVoucher.Items.Refresh();
+        }
+
+        private void OnPilihVoucherClicked(object sender, RoutedEventArgs e)
+        {
+            PilihVoucher pilihVoucherWindow = new PilihVoucher();
+            pilihVoucherWindow.SetOnItemSelectedListener(this);
+            pilihVoucherWindow.Show();
+        }
+
+        public void OnPilihVoucherChangedListener(Voucher item)
+        {
+            controller.addVoucher(item);
+        }
+
+
     }
 }

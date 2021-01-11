@@ -63,7 +63,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindoController.cs" />
+    <Compile Include="Controller\MainWindoController.cs" />
+    <Compile Include="Controller\VoucherController.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -72,15 +73,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PilihVoucher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\KeranjangBelanja.cs" />
     <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\Voucher.cs" />
     <Compile Include="Penawaran.xaml.cs">
       <DependentUpon>Penawaran.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PenawaranController.cs" />
+    <Compile Include="Controller\PenawaranController.cs" />
+    <Compile Include="PilihVoucher.xaml.cs">
+      <DependentUpon>PilihVoucher.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
