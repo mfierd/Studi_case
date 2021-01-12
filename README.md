@@ -1,3 +1,7 @@
+Muhammad Firdaus Ferdiansyah
+19.11.2789
+19IF03
+
 # Studi_case
 aplikasi studi kasus (File-nya ada di branch master)
 
@@ -80,5 +84,3 @@ File didalam folder Controller berfungsi untuk mengatur pemanggilan dari model a
 File MainWindow.xaml.cs menyediakan tampilan dari keranjangbelanja atau item yang telah dipilih.
 File Penawaran.xaml.cs menyediakan tampilan list item-item yang ditawarkan.
 File PilihVoucher.xaml.cs menyediakan tampilan list voucher yang tersedia.
-
-19.11.2789
